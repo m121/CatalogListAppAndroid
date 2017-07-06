@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Catalog list</string>
+
+    <string name="textview_userlist_name">User Name</string>
+    <string name="textview_userlist_email">User Email</string>
+
+
+</resources>
