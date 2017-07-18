@@ -1,6 +1,9 @@
 package com.perez.mateo.cataloglistandroid;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.constraint.ConstraintLayout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,9 +75,20 @@ public class UserlistAdapter extends BaseAdapter {
             view = inflater.inflate(R.layout.userlist_item, viewGroup, false);
         }
 
+        ConstraintLayout  constraintLayout_itemuser = (ConstraintLayout) view.findViewById(R.id.constrainlayout_userlist_item);
         ImageView imageView_picuser = (ImageView) view.findViewById(R.id.imageView_userlist_imageuser);
         TextView textview_nameuser = (TextView) view.findViewById(R.id.textView_userlist_nameuser);
         TextView textView_emailuser = (TextView) view.findViewById(R.id.textView_userlist_emailuser);
+
+        constraintLayout_itemuser.setClickable(true);
+        constraintLayout_itemuser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context,DetailActivity.class);
+                intent.putExtra("userid",arrayList_midusers.get(position));
+                context.startActivity(intent);
+            }
+        });
 
         Picasso.with(context).load(R.mipmap.userlist_userpic_48px).into(imageView_picuser);
 
