@@ -101,7 +101,7 @@ public class DetailActivity extends AppCompatActivity {
 
 
 
-
+//
                 Picasso.with(this).load(R.mipmap.userlist_userpic_48px).into(imageview_userpic);
                 textView_username.setText("Name: "+user.getName());
                 textView_useremail.setText("Email: "+user.getEmail());
